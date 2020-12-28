@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import  {NavbarComponent} from './components/navbar/navbar.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AccountService} from "./services/account.service";
 
 
 @NgModule({
@@ -8,7 +10,12 @@ import  {NavbarComponent} from './components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    AccountService,
   ],
   exports: [
     NavbarComponent
