@@ -4,11 +4,15 @@ import  {NavbarComponent} from './components/navbar/navbar.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AccountService} from "./services/account.service";
+import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,8 @@ import {AccountService} from "./services/account.service";
     AccountService,
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
   ]
 })
 export class CoreModule { }
