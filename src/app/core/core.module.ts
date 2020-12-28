@@ -9,6 +9,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import {RouterModule} from "@angular/router";
+import {ToastrModule} from "ngx-toastr";
+
 
 
 @NgModule({
@@ -25,6 +27,9 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     RouterModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [
     AccountService,

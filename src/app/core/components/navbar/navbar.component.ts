@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../services/account.service";
 import {User} from "../../../models/user";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +19,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService,
   ) {
     this.initForm();
   }
@@ -32,13 +36,16 @@ export class NavbarComponent implements OnInit {
 
   login() {
     this.accountService.login(this.loginForm.value).subscribe(response => {
+      this.router.navigateByUrl('/members');
     },error => {
       console.log(error);
+      this.toastr.error(error.error);
     })
   }
 
   logout() {
     this.accountService.logout();
+    this.router.navigateByUrl('/');
   }
 
 

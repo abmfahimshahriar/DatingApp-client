@@ -7,7 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CoreModule} from "./core/core.module";
 import {MembersModule} from "./members/members.module";
-
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import {MembersModule} from "./members/members.module";
     BrowserAnimationsModule,
     CoreModule,
     MembersModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

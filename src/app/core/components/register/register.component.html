@@ -9,6 +9,6 @@
   </div>
 </form>
 <div class="form-group text-center">
+  <button class="btn btn-default mr-2 " (click)="cancel()">Cancel</button>
   <button [disabled]="!registrationForm.valid" class="btn btn-success mr-2 " (click)="register()">Register</button>
-  <button [disabled]="!registrationForm.valid" class="btn btn-default mr-2 " (click)="cancel()">Cancel</button>
 </div>
