@@ -6,19 +6,25 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AccountService} from "./services/account.service";
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ListsComponent } from './components/lists/lists.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListsComponent,
+    MessagesComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
+    RouterModule,
   ],
   providers: [
     AccountService,
@@ -26,6 +32,8 @@ import { RegisterComponent } from './components/register/register.component';
   exports: [
     NavbarComponent,
     HomeComponent,
+    ListsComponent,
+    MessagesComponent,
   ]
 })
 export class CoreModule { }
