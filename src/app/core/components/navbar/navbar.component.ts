@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../services/account.service";
+import {User} from "../../../models/user";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +12,7 @@ import {AccountService} from "../../services/account.service";
 export class NavbarComponent implements OnInit {
   loginForm: FormGroup;
   loggedIn: boolean;
+  currentUser: Observable<User>
 
   constructor(
     private fb: FormBuilder,
@@ -24,15 +27,19 @@ export class NavbarComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    this.currentUser = this.accountService.currentUser$;
   }
 
   login() {
     this.accountService.login(this.loginForm.value).subscribe(response => {
-      console.log(response);
-      this.loggedIn = true;
     },error => {
       console.log(error);
     })
   }
+
+  logout() {
+    this.accountService.logout();
+  }
+
 
 }
