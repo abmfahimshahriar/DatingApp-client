@@ -11,6 +11,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import {RouterModule} from "@angular/router";
 import {ToastrModule} from "ngx-toastr";
 import { TestErrorsComponent } from './components/test-errors/test-errors.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ServerErrorComponent } from './components/server-error/server-error.component';
 
 
 
@@ -21,7 +23,9 @@ import { TestErrorsComponent } from './components/test-errors/test-errors.compon
     RegisterComponent,
     ListsComponent,
     MessagesComponent,
-    TestErrorsComponent
+    TestErrorsComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     CommonModule,
@@ -42,6 +46,8 @@ import { TestErrorsComponent } from './components/test-errors/test-errors.compon
     ListsComponent,
     MessagesComponent,
     TestErrorsComponent,
+    NotFoundComponent,
+    ServerErrorComponent,
   ]
 })
 export class CoreModule { }
