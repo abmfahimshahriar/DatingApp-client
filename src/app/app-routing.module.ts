@@ -6,6 +6,7 @@ import {MemberDetailsComponent} from "./members/components/member-details/member
 import {ListsComponent} from "./core/components/lists/lists.component";
 import {MessagesComponent} from "./core/components/messages/messages.component";
 import {AuthGuard} from "./core/services/auth.guard";
+import {TestErrorsComponent} from "./core/components/test-errors/test-errors.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
         component: MessagesComponent,
       },
     ]
+  },
+  {
+    path: 'errors',
+    component: TestErrorsComponent,
   },
   {
     path: '**',

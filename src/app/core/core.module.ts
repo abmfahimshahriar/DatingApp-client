@@ -10,6 +10,7 @@ import { ListsComponent } from './components/lists/lists.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import {RouterModule} from "@angular/router";
 import {ToastrModule} from "ngx-toastr";
+import { TestErrorsComponent } from './components/test-errors/test-errors.component';
 
 
 
@@ -19,7 +20,8 @@ import {ToastrModule} from "ngx-toastr";
     HomeComponent,
     RegisterComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    TestErrorsComponent
   ],
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import {ToastrModule} from "ngx-toastr";
     HomeComponent,
     ListsComponent,
     MessagesComponent,
+    TestErrorsComponent,
   ]
 })
 export class CoreModule { }
