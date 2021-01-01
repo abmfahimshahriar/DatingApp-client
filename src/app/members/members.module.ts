@@ -6,6 +6,7 @@ import { MemberCardComponent } from './components/member-card/member-card.compon
 import {MembersService} from "./services/members.service";
 import {RouterModule} from "@angular/router";
 import {TabsModule} from "ngx-bootstrap/tabs";
+import {NgxGalleryModule} from "@kolkov/ngx-gallery";
 
 
 
@@ -15,11 +16,13 @@ import {TabsModule} from "ngx-bootstrap/tabs";
     CommonModule,
     RouterModule,
     TabsModule.forRoot(),
+    NgxGalleryModule,
   ],
   exports: [
     MemberListComponent,
     MemberDetailsComponent,
     TabsModule,
+    NgxGalleryModule,
   ],
   providers: [
     MembersService,
