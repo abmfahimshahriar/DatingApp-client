@@ -4,17 +4,22 @@ import { MemberListComponent } from './components/member-list/member-list.compon
 import { MemberDetailsComponent } from './components/member-details/member-details.component';
 import { MemberCardComponent } from './components/member-card/member-card.component';
 import {MembersService} from "./services/members.service";
+import {RouterModule} from "@angular/router";
+import {TabsModule} from "ngx-bootstrap/tabs";
 
 
 
 @NgModule({
   declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    TabsModule.forRoot(),
   ],
   exports: [
     MemberListComponent,
     MemberDetailsComponent,
+    TabsModule,
   ],
   providers: [
     MembersService,
