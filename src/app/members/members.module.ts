@@ -9,6 +9,7 @@ import {TabsModule} from "ngx-bootstrap/tabs";
 import {NgxGalleryModule} from "@kolkov/ngx-gallery";
 import { MemberEditComponent } from './components/member-edit/member-edit.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {CoreModule} from "../core/core.module";
 
 
 
@@ -20,6 +21,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     TabsModule.forRoot(),
     NgxGalleryModule,
     ReactiveFormsModule,
+    CoreModule,
   ],
   exports: [
     MemberListComponent,
