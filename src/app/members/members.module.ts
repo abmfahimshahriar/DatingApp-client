@@ -7,22 +7,26 @@ import {MembersService} from "./services/members.service";
 import {RouterModule} from "@angular/router";
 import {TabsModule} from "ngx-bootstrap/tabs";
 import {NgxGalleryModule} from "@kolkov/ngx-gallery";
+import { MemberEditComponent } from './components/member-edit/member-edit.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
 @NgModule({
-  declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent],
+  declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent, MemberEditComponent],
   imports: [
     CommonModule,
     RouterModule,
     TabsModule.forRoot(),
     NgxGalleryModule,
+    ReactiveFormsModule,
   ],
   exports: [
     MemberListComponent,
     MemberDetailsComponent,
     TabsModule,
     NgxGalleryModule,
+    MemberEditComponent,
   ],
   providers: [
     MembersService,
