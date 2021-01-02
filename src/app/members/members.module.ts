@@ -10,11 +10,13 @@ import {NgxGalleryModule} from "@kolkov/ngx-gallery";
 import { MemberEditComponent } from './components/member-edit/member-edit.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {CoreModule} from "../core/core.module";
+import { PhotoEditorComponent } from './components/photo-editor/photo-editor.component';
+import {FileUploadModule} from "ng2-file-upload";
 
 
 
 @NgModule({
-  declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent, MemberEditComponent],
+  declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent, MemberEditComponent, PhotoEditorComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -22,6 +24,7 @@ import {CoreModule} from "../core/core.module";
     NgxGalleryModule,
     ReactiveFormsModule,
     CoreModule,
+    FileUploadModule,
   ],
   exports: [
     MemberListComponent,
@@ -29,6 +32,7 @@ import {CoreModule} from "../core/core.module";
     TabsModule,
     NgxGalleryModule,
     MemberEditComponent,
+    FileUploadModule,
   ],
   providers: [
     MembersService,
