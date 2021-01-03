@@ -1,9 +1,34 @@
 <form [formGroup]="registrationForm" autocomplete="off" >
   <h2 class="text-center text-primary">Sign up</h2>
   <hr>
+  <div class="form-group">
+    <label class="control-label mr-3">I am :</label>
+    <label class="radio-inline mr-3">
+      <input type="radio" value="male" formControlName="Gender" > Male
+    </label>
+    <label class="radio-inline">
+      <input type="radio" value="female" formControlName="Gender" class="mr-3"> Female
+    </label>
+  </div>
   <app-text-input
   [formControl]="registrationForm.controls['Username']"
   [label]="'Username'"
+  ></app-text-input>
+  <app-text-input
+    [formControl]="registrationForm.controls['KnownAs']"
+    [label]="'Known as'"
+  ></app-text-input>
+  <app-text-input
+    [formControl]="registrationForm.controls['DateOfBirth']"
+    [label]="'Date of birth'"
+  ></app-text-input>
+  <app-text-input
+    [formControl]="registrationForm.controls['City']"
+    [label]="'City'"
+  ></app-text-input>
+  <app-text-input
+    [formControl]="registrationForm.controls['Country']"
+    [label]="'Country'"
   ></app-text-input>
   <app-text-input
     [formControl]="registrationForm.controls['Password']"
