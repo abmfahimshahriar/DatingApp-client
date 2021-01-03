@@ -18,10 +18,11 @@
     [formControl]="registrationForm.controls['KnownAs']"
     [label]="'Known as'"
   ></app-text-input>
-  <app-text-input
+  <app-date-input
     [formControl]="registrationForm.controls['DateOfBirth']"
     [label]="'Date of birth'"
-  ></app-text-input>
+    [maxDate]="maxDate"
+  ></app-date-input>
   <app-text-input
     [formControl]="registrationForm.controls['City']"
     [label]="'City'"

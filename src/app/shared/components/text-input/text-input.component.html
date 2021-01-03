@@ -2,8 +2,8 @@
   <input
     [class.is-invalid] = "ngControl.touched && ngControl.invalid"
     class="form-control"
-    type={{type}}
-    placeholder={{label}}
+    type="{{type}}"
+    placeholder="{{label}}"
     [formControl]="ngControl.control">
   <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">
     Please enter {{label}}

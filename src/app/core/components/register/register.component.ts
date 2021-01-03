@@ -12,6 +12,7 @@ import {ValidateFn} from "codelyzer/walkerFactory/walkerFn";
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   registrationForm: FormGroup;
+  maxDate: Date;
 
   constructor(
     private fb: FormBuilder,
@@ -22,6 +23,8 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.maxDate = new Date();
+    this.maxDate.setFullYear(this.maxDate.getFullYear() -18);
   }
 
   initForm() {
