@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   loginForm: FormGroup;
   loggedIn: boolean;
   currentUser: Observable<User>
+  noPhotoUrl = "https://res.cloudinary.com/fshahriar008/image/upload/v1609701702/user_bccush.png";
 
   constructor(
     private fb: FormBuilder,

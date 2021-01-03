@@ -16,6 +16,8 @@ export class MemberEditComponent implements OnInit {
   member: Member;
   user: User;
   memberEditForm: FormGroup;
+  noPhotoUrl = "https://res.cloudinary.com/fshahriar008/image/upload/v1609701702/user_bccush.png";
+
   @HostListener('window: beforeunload',['$event']) unloadNotification($event: any) {
     if (this.memberEditForm.dirty) {
       $event.returnValue = true;

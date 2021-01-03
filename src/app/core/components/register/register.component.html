@@ -41,16 +41,17 @@
     [label]="'Confirm Password'"
     [type]="'password'"
   ></app-text-input>
+
+  <div class="row" *ngIf="validationErrors.length>0">
+    <ui class="text-danger">
+      <li *ngFor="let error of validationErrors">
+        {{error}}
+      </li>
+    </ui>
+  </div>
+
 </form>
 <div class="form-group text-center">
   <button class="btn btn-default mr-2 " (click)="cancel()">Cancel</button>
   <button [disabled]="!registrationForm.valid" class="btn btn-success mr-2 " (click)="register()">Register</button>
-</div>
-
-
-<div>
-  {{registrationForm.value | json}}
-</div>
-<div>
-  {{registrationForm.status}}
 </div>

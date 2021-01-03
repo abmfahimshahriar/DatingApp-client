@@ -15,7 +15,7 @@ export class MemberDetailsComponent implements OnInit {
   galleryImages: NgxGalleryImage[];
 
   member: Member;
-
+  noPhotoUrl = "https://res.cloudinary.com/fshahriar008/image/upload/v1609701702/user_bccush.png";
   constructor(
     private memberService: MembersService,
     private route: ActivatedRoute,

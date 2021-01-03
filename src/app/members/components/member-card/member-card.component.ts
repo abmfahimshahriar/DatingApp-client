@@ -9,7 +9,7 @@ import {Member} from "../../../models/Member";
 export class MemberCardComponent implements OnInit {
 
   @Input() member: Member;
-
+  noPhotoUrl = "https://res.cloudinary.com/fshahriar008/image/upload/v1609701702/user_bccush.png";
   constructor() { }
 
   ngOnInit(): void {
