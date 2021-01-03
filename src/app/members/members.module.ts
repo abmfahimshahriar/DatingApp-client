@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {CoreModule} from "../core/core.module";
 import { PhotoEditorComponent } from './components/photo-editor/photo-editor.component';
 import {FileUploadModule} from "ng2-file-upload";
+import {SharedModule} from "../shared/shared.module";
 
 
 
@@ -25,6 +26,7 @@ import {FileUploadModule} from "ng2-file-upload";
     ReactiveFormsModule,
     CoreModule,
     FileUploadModule,
+    SharedModule,
   ],
   exports: [
     MemberListComponent,

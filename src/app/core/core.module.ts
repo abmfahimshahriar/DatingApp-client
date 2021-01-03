@@ -15,6 +15,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import {NgxSpinnerModule} from "ngx-spinner";
 import {BusyService} from "./services/busy.service";
+import {SharedModule} from "../shared/shared.module";
 
 
 
@@ -29,17 +30,18 @@ import {BusyService} from "./services/busy.service";
     NotFoundComponent,
     ServerErrorComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BsDropdownModule.forRoot(),
-    RouterModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    }),
-    NgxSpinnerModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BsDropdownModule.forRoot(),
+        RouterModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-bottom-right'
+        }),
+        NgxSpinnerModule,
+        SharedModule,
+    ],
   providers: [
     AccountService,
     BusyService,
