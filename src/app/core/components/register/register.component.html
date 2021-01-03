@@ -2,13 +2,36 @@
   <h2 class="text-center text-primary">Sign up</h2>
   <hr>
   <div class="form-group">
-    <input class="form-control" type="text" placeholder="Username" formControlName="Username">
+    <input
+      [class.is-invalid] = "registrationForm.get('Username').errors && registrationForm.get('Username').touched"
+      class="form-control" type="text" placeholder="Username" formControlName="Username">
+    <div class="invalid-feedback">Please enter a username</div>
   </div>
   <div class="form-group">
-    <input class="form-control" type="password" placeholder="Password" formControlName="Password">
+    <input
+      [class.is-invalid] = "registrationForm.get('Password').errors && registrationForm.get('Password').touched"
+      class="form-control" type="password" placeholder="Password" formControlName="Password">
+    <div *ngIf="registrationForm.get('Password').hasError('required')" class="invalid-feedback">Please enter a password</div>
+    <div *ngIf="registrationForm.get('Password').hasError('minlength')" class="invalid-feedback">Password must be at least 4 characters</div>
+    <div *ngIf="registrationForm.get('Password').hasError('maxlength')" class="invalid-feedback">Password must be at most 8 characters</div>
+  </div>
+  <div class="form-group">
+    <input
+      [class.is-invalid] = "registrationForm.get('ConfirmPassword').errors && registrationForm.get('ConfirmPassword').touched"
+      class="form-control" type="password" placeholder="Confirm Password" formControlName="ConfirmPassword">
+    <div *ngIf="registrationForm.get('ConfirmPassword').hasError('required')" class="invalid-feedback">Please enter confirm password</div>
+    <div *ngIf="registrationForm.get('ConfirmPassword').hasError('isMatching')" class="invalid-feedback">Password must match</div>
   </div>
 </form>
 <div class="form-group text-center">
   <button class="btn btn-default mr-2 " (click)="cancel()">Cancel</button>
   <button [disabled]="!registrationForm.valid" class="btn btn-success mr-2 " (click)="register()">Register</button>
 </div>
+
+
+<!--<div>-->
+<!--  {{registrationForm.value | json}}-->
+<!--</div>-->
+<!--<div>-->
+<!--  {{registrationForm.status}}-->
+<!--</div>-->

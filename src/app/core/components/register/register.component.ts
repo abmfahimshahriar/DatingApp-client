@@ -1,7 +1,8 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../services/account.service";
 import {ToastrService} from "ngx-toastr";
+import {ValidateFn} from "codelyzer/walkerFactory/walkerFn";
 
 @Component({
   selector: 'app-register',
@@ -26,8 +27,15 @@ export class RegisterComponent implements OnInit {
   initForm() {
     this.registrationForm = this.fb.group({
       Username: ['',Validators.required],
-      Password: ['',Validators.required],
+      Password: ['',[Validators.required,Validators.minLength(4),Validators.maxLength(8)]],
+      ConfirmPassword: ['',[Validators.required,this.matchValues('Password')]],
     });
+  }
+
+  matchValues(matchTo: string) {
+    return (control: AbstractControl) => {
+      return control?.value === control?.parent?.controls[matchTo].value ? null : {isMatching: true};
+    };
   }
 
   register() {
