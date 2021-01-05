@@ -14,7 +14,7 @@ import { PhotoEditorComponent } from './components/photo-editor/photo-editor.com
 import {FileUploadModule} from "ng2-file-upload";
 import {SharedModule} from "../shared/shared.module";
 import {PaginationModule} from "ngx-bootstrap/pagination";
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 
 @NgModule({
@@ -29,6 +29,7 @@ import {PaginationModule} from "ngx-bootstrap/pagination";
     FileUploadModule,
     SharedModule,
     PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
   ],
   exports: [
     MemberListComponent,
@@ -38,6 +39,7 @@ import {PaginationModule} from "ngx-bootstrap/pagination";
     MemberEditComponent,
     FileUploadModule,
     PaginationModule,
+    ButtonsModule,
   ],
   providers: [
     MembersService,
