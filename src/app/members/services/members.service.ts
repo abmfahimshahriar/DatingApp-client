@@ -13,13 +13,16 @@ import {UserParams} from "../../models/UserParams";
 export class MembersService {
   baseUrl = environment.apiUrl;
   members: Member[] = [];
-
+  memberCache = new Map();
 
   constructor(
     private http: HttpClient,
   ) { }
 
   getMembers(userParams: UserParams) {
+    let response = this.memberCache.get(Object.values(userParams).join('-'));
+    if(response) return of(response);
+
     let params = this.getPaginationHeaders(userParams.pageNumber,userParams.pageSize);
 
     params = params.append('minAge',userParams.minAge.toString());
@@ -27,12 +30,20 @@ export class MembersService {
     params = params.append('gender',userParams.gender);
     params = params.append('orderBy',userParams.orderBy);
 
-    return this.getPaginatedResult<Member[]>(this.baseUrl + 'users',params);
+    return this.getPaginatedResult<Member[]>(this.baseUrl + 'users',params).pipe(
+      map(response => {
+        this.memberCache.set(Object.values(userParams).join('-'),response);
+        return response;
+      })
+    );
   }
 
   getMember(username: string) {
-    const member = this.members.find(x => x.username === username);
-    if(member !== undefined) return of(member);
+    const member = [...this.memberCache.values()]
+      .reduce((prev, cur) => prev.concat(cur.result),[])
+      .find((member: Member) => member.username === username);
+
+    if(member) return of(member);
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 
