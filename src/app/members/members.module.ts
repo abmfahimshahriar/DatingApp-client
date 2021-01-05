@@ -15,7 +15,7 @@ import {FileUploadModule} from "ng2-file-upload";
 import {SharedModule} from "../shared/shared.module";
 import {PaginationModule} from "ngx-bootstrap/pagination";
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-
+import { TimeagoModule } from 'ngx-timeago';
 
 @NgModule({
   declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent, MemberEditComponent, PhotoEditorComponent],
@@ -30,6 +30,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     SharedModule,
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
+    TimeagoModule.forRoot(),
   ],
   exports: [
     MemberListComponent,
@@ -40,6 +41,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     FileUploadModule,
     PaginationModule,
     ButtonsModule,
+    TimeagoModule,
   ],
   providers: [
     MembersService,
