@@ -16,6 +16,8 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
 import {NgxSpinnerModule} from "ngx-spinner";
 import {BusyService} from "./services/busy.service";
 import {SharedModule} from "../shared/shared.module";
+import {PaginationModule} from "ngx-bootstrap/pagination";
+import {ButtonsModule} from "ngx-bootstrap/buttons";
 
 
 
@@ -41,6 +43,8 @@ import {SharedModule} from "../shared/shared.module";
         }),
         NgxSpinnerModule,
         SharedModule,
+        PaginationModule.forRoot(),
+        ButtonsModule.forRoot(),
     ],
   providers: [
     AccountService,

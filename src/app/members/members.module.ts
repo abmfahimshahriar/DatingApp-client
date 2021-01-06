@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MemberListComponent } from './components/member-list/member-list.component';
 import { MemberDetailsComponent } from './components/member-details/member-details.component';
-import { MemberCardComponent } from './components/member-card/member-card.component';
+import { MemberCardComponent } from '../shared/components/member-card/member-card.component';
 import {MembersService} from "./services/members.service";
 import {RouterModule} from "@angular/router";
 import {TabsModule} from "ngx-bootstrap/tabs";
@@ -18,7 +18,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 
 @NgModule({
-  declarations: [MemberListComponent, MemberDetailsComponent, MemberCardComponent, MemberEditComponent, PhotoEditorComponent],
+  declarations: [MemberListComponent, MemberDetailsComponent, MemberEditComponent, PhotoEditorComponent],
   imports: [
     CommonModule,
     RouterModule,
