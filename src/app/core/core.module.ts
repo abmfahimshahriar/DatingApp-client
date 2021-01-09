@@ -18,6 +18,8 @@ import {BusyService} from "./services/busy.service";
 import {SharedModule} from "../shared/shared.module";
 import {PaginationModule} from "ngx-bootstrap/pagination";
 import {ButtonsModule} from "ngx-bootstrap/buttons";
+import {MessageService} from "./services/message.service";
+import {TimeagoModule} from "ngx-timeago";
 
 
 
@@ -45,10 +47,12 @@ import {ButtonsModule} from "ngx-bootstrap/buttons";
         SharedModule,
         PaginationModule.forRoot(),
         ButtonsModule.forRoot(),
+        TimeagoModule.forRoot(),
     ],
   providers: [
     AccountService,
     BusyService,
+    MessageService,
   ],
   exports: [
     NavbarComponent,
