@@ -9,22 +9,16 @@ import {NoPhotoUrl} from "../../../shared/utility/noImagePhoto";
   styleUrls: ['./member-messages.component.scss']
 })
 export class MemberMessagesComponent implements OnInit {
-  @Input() username: string;
-  messages: Message[];
+  @Input() username;
+  @Input() messages: Message[];
   noImgUrl = NoPhotoUrl;
 
   constructor(
-    private messageService: MessageService,
   ) { }
 
   ngOnInit(): void {
-    this.loadMessages();
   }
 
-  loadMessages() {
-    this.messageService.getMessageThread(this.username).subscribe(messages => {
-      this.messages = messages;
-    });
-  }
+
 
 }

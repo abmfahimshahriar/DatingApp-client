@@ -11,6 +11,7 @@ import {NotFoundComponent} from "./core/components/not-found/not-found.component
 import {ServerErrorComponent} from "./core/components/server-error/server-error.component";
 import {MemberEditComponent} from "./members/components/member-edit/member-edit.component";
 import {PreventUnsavedChangesGuard} from "./members/services/prevent-unsaved-changes.guard";
+import {MemberDetailsResolver} from "./members/resolvers/member-details.resolver";
 
 const routes: Routes = [
   {
@@ -29,6 +30,9 @@ const routes: Routes = [
       {
         path: 'members/:username',
         component: MemberDetailsComponent,
+        resolve: {
+          member: MemberDetailsResolver,
+        }
       },
       {
         path: 'member/edit',
