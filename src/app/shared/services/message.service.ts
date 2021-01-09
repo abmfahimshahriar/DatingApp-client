@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {getPaginatedResult, getPaginationHeaders} from "../../shared/utility/PaginationHelper";
+import {getPaginatedResult, getPaginationHeaders} from "../utility/PaginationHelper";
 import {Message} from "../../models/message";
 
 @Injectable({
@@ -20,5 +20,9 @@ export class MessageService {
     params = params.append('Container', container);
 
     return getPaginatedResult<Message[]>(this.baseUrl + 'messages', params, this.http);
+  }
+
+  getMessageThread(username: string) {
+    return this.http.get<Message[]>(this.baseUrl + 'messages/thread/' + username);
   }
 }

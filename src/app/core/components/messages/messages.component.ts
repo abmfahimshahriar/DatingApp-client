@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Message} from "../../../models/message";
 import {Pagination} from "../../../models/pagination";
-import {MessageService} from "../../services/message.service";
+import {MessageService} from "../../../shared/services/message.service";
 import {NoPhotoUrl} from "../../../shared/utility/noImagePhoto";
 
 @Component({

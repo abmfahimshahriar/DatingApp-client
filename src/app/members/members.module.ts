@@ -16,9 +16,11 @@ import {SharedModule} from "../shared/shared.module";
 import {PaginationModule} from "ngx-bootstrap/pagination";
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
+import { MemberMessagesComponent } from './components/member-messages/member-messages.component';
+import {MessageService} from "../shared/services/message.service";
 
 @NgModule({
-  declarations: [MemberListComponent, MemberDetailsComponent, MemberEditComponent, PhotoEditorComponent],
+  declarations: [MemberListComponent, MemberDetailsComponent, MemberEditComponent, PhotoEditorComponent, MemberMessagesComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -45,6 +47,7 @@ import { TimeagoModule } from 'ngx-timeago';
   ],
   providers: [
     MembersService,
+    MessageService,
   ]
 })
 export class MembersModule { }
