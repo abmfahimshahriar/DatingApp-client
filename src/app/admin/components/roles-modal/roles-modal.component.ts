@@ -13,7 +13,7 @@ export class RolesModalComponent implements OnInit {
   roles: any[];
 
   constructor(
-    private bsModalRef: BsModalRef,
+    public bsModalRef: BsModalRef,
   ) { }
 
   ngOnInit(): void {
