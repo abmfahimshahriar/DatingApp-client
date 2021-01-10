@@ -6,6 +6,7 @@ import { DateInputComponent } from './components/date-input/date-input.component
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {MemberCardComponent} from "./components/member-card/member-card.component";
 import {RouterModule} from "@angular/router";
+import { HasRoleDirective } from './directives/has-role.directive';
 
 
 
@@ -14,6 +15,7 @@ import {RouterModule} from "@angular/router";
     TextInputComponent,
     DateInputComponent,
     MemberCardComponent,
+    HasRoleDirective,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import {RouterModule} from "@angular/router";
     DateInputComponent,
     BsDatepickerModule,
     MemberCardComponent,
+    HasRoleDirective,
   ]
 })
 export class SharedModule { }
