@@ -11,6 +11,7 @@ import {ToastrModule} from "ngx-toastr";
 import {ErrorInterceptor} from "./interceptors/error.interceptor";
 import {JwtInterceptor} from "./interceptors/jwt.interceptor";
 import {LoadingInterceptor} from "./interceptors/loading.interceptor";
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import {LoadingInterceptor} from "./interceptors/loading.interceptor";
     BrowserAnimationsModule,
     CoreModule,
     MembersModule,
-
+    AdminModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass: ErrorInterceptor,multi: true},
