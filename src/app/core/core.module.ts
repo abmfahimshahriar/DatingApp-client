@@ -20,6 +20,7 @@ import {PaginationModule} from "ngx-bootstrap/pagination";
 import {ButtonsModule} from "ngx-bootstrap/buttons";
 import {MessageService} from "../shared/services/message.service";
 import {TimeagoModule} from "ngx-timeago";
+import {PresenceService} from "./services/presence.service";
 
 
 
@@ -53,6 +54,7 @@ import {TimeagoModule} from "ngx-timeago";
     AccountService,
     BusyService,
     MessageService,
+    PresenceService,
   ],
   exports: [
     NavbarComponent,
