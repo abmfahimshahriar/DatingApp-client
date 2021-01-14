@@ -97,7 +97,6 @@ export class MemberDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log("member details destroyed");
     this.messageService.stopHubConnection();
   }
 

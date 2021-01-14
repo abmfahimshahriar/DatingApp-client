@@ -3,6 +3,7 @@ import {Message} from "../../../models/message";
 import {Pagination} from "../../../models/pagination";
 import {MessageService} from "../../../shared/services/message.service";
 import {NoPhotoUrl} from "../../../shared/utility/noImagePhoto";
+import {ConfirmService} from "../../services/confirm.service";
 
 @Component({
   selector: 'app-messages',
@@ -22,6 +23,7 @@ export class MessagesComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
+    private confirmService: ConfirmService,
   ) { }
 
   ngOnInit(): void {
@@ -38,9 +40,15 @@ export class MessagesComponent implements OnInit {
   }
 
   deleteMessage(id: number) {
-    this.messageService.deleteMessage(id).subscribe(() => {
-      this.messages.splice(this.messages.findIndex(m => m.id === id),1);
-    });
+
+    this.confirmService.confirm("Delete this message?","This can not be undone").subscribe(result => {
+      if (result) {
+        this.messageService.deleteMessage(id).subscribe(() => {
+          this.messages.splice(this.messages.findIndex(m => m.id === id),1);
+        });
+      }
+    })
+
   }
 
   pageChanged(event: any) {

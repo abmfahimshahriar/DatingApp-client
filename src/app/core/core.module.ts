@@ -21,6 +21,7 @@ import {ButtonsModule} from "ngx-bootstrap/buttons";
 import {MessageService} from "../shared/services/message.service";
 import {TimeagoModule} from "ngx-timeago";
 import {PresenceService} from "./services/presence.service";
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -33,7 +34,8 @@ import {PresenceService} from "./services/presence.service";
     MessagesComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    ConfirmDialogComponent
   ],
     imports: [
         CommonModule,
